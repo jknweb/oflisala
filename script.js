@@ -13,7 +13,7 @@ const SITE_CONFIG = {
   address: "N° 1, avenue du Port, commune de Bolikango",  // complété automatiquement par ", Lisala, Mongala, RD Congo"
   phone: "",        // ex. "+243 8X XXX XX XX"
   email: "",        // ex. "contact@…"
-  whatsapp: "",     // numéro international, chiffres uniquement, ex. "2438XXXXXXXX"
+  whatsapp: "243000000000",  // numéro international, chiffres uniquement (numéro provisoire)
   whatsappMessage: "Bonjour, je vous contacte depuis le site de l'OC Lisala.",
   socials: {
     facebook: "",   // ex. "https://facebook.com/…"
@@ -66,6 +66,12 @@ const TEAM = [
     });
   }
 
+  /* --- Lien WhatsApp avec message prérempli --- */
+  function waLink(text) {
+    const wa = SITE_CONFIG.whatsapp.replace(/\D/g, "");
+    return wa ? `https://wa.me/${wa}?text=${encodeURIComponent(text)}` : "";
+  }
+
   /* --- Coordonnées, WhatsApp, réseaux sociaux --- */
   function applyConfig() {
     $$("[data-config]").forEach((el) => {
@@ -82,7 +88,7 @@ const TEAM = [
     const wa = SITE_CONFIG.whatsapp.replace(/\D/g, "");
     if (wa) {
       $$("[data-whatsapp]").forEach((link) => {
-        link.href = `https://wa.me/${wa}?text=${encodeURIComponent(SITE_CONFIG.whatsappMessage)}`;
+        link.href = waLink(link.dataset.waText || SITE_CONFIG.whatsappMessage);
         link.target = "_blank";
         link.rel = "noopener";
         link.hidden = false;
@@ -277,7 +283,18 @@ const TEAM = [
       const ok = fields.map(validate).every(Boolean);
       success.hidden = !ok;
       if (ok) {
-        // WordPress : remplacer par l'envoi réel (Contact Form 7, WPForms…).
+        // Envoi via WhatsApp (WordPress : ou Contact Form 7, WPForms…).
+        const data = new FormData(form);
+        const text = [
+          "Bonjour, message envoyé depuis le site de l'OC Lisala.",
+          `Nom : ${data.get("name")}`,
+          `E-mail : ${data.get("email")}`,
+          `Sujet : ${data.get("subject")}`,
+          "",
+          data.get("message")
+        ].join("\n");
+        const url = waLink(text);
+        if (url) window.open(url, "_blank", "noopener");
         form.reset();
       } else {
         $(".has-error input, .has-error select, .has-error textarea", form).focus();

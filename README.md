@@ -16,7 +16,7 @@ images/logo/      Logo officiel du club (SVG) et icônes
 
 | Quoi | Où |
 | --- | --- |
-| Téléphone, e-mail, WhatsApp, réseaux sociaux (adresse déjà renseignée) | `SITE_CONFIG` en haut de `script.js` (le bouton WhatsApp apparaît dès que le numéro est renseigné) |
+| Téléphone, e-mail, vrai numéro WhatsApp (provisoire : 243000000000), réseaux sociaux | `SITE_CONFIG` en haut de `script.js` (le bouton WhatsApp apparaît dès que le numéro est renseigné) |
 | Joueurs, entraîneur, staff (nom, numéro, photo) | `TEAM` dans `script.js` |
 | Histoire, date de fondation, stade | Section `#club` de `index.html` |
 | Articles | Cartes `.news-card` et `<template id="article-N">` dans `index.html` |
@@ -39,7 +39,7 @@ Pour mettre les photos du club : remplacer l'attribut `src` (et `srcset` pour la
 ## Couleurs
 
 Rouge principal `#A3060F` (dominant), noir `#1C1C1E`, blanc `#FFFFFF`, vert terrain `#2F7A43` en accent.
-Polices : Montserrat (titres), Barlow Condensed (chiffres et labels), Barlow (texte).
+Polices : Oswald (titres, chiffres et labels), Inter (texte).
 
 ## Vers WordPress
 

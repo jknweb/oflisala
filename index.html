@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.pexels.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 
   <link rel="stylesheet" href="style.css">
 
@@ -112,8 +112,8 @@
       Un club de caractère, uni autour de ses joueurs, de ses supporters et de ses partenaires.
     </p>
     <div class="hero__actions">
-      <a class="btn btn--primary" href="#club">Découvrir le club</a>
-      <a class="btn btn--outline-light" href="#partenaires">Nos partenaires</a>
+      <a class="btn btn--primary" href="#club" data-whatsapp data-wa-text="Bonjour, je souhaite découvrir l'OC Lisala.">Découvrir le club</a>
+      <a class="btn btn--outline-light" href="#partenaires" data-whatsapp data-wa-text="Bonjour, je souhaite en savoir plus sur les partenaires de l'OC Lisala.">Nos partenaires</a>
     </div>
   </div>
 
@@ -200,35 +200,15 @@
       </article>
     </div>
 
-    <!-- Valeurs -->
-    <div class="values">
-      <article class="value reveal">
-        <span class="value__num">01</span>
-        <h3 class="value__title">Fierté locale</h3>
-        <p>Représenter Lisala et la Mongala sur chaque terrain, avec respect et détermination.</p>
-      </article>
-      <article class="value reveal">
-        <span class="value__num">02</span>
-        <h3 class="value__title">Esprit d'équipe</h3>
-        <p>Un groupe solidaire où chacun joue pour le collectif, sur le terrain comme en dehors.</p>
-      </article>
-      <article class="value reveal">
-        <span class="value__num">03</span>
-        <h3 class="value__title">Discipline</h3>
-        <p>Rigueur à l'entraînement, respect des adversaires, des arbitres et du public.</p>
-      </article>
-      <article class="value reveal">
-        <span class="value__num">04</span>
-        <h3 class="value__title">Ambition sportive</h3>
-        <p>Progresser saison après saison et viser les meilleures places du football congolais.</p>
-      </article>
-    </div>
-
-    <!-- Vision -->
-    <blockquote class="vision reveal">
-      <p>« Faire de l'OC Lisala un club respecté, reconnu pour son jeu, sa rigueur et la fierté qu'il donne à toute une ville. »</p>
-      <cite>Notre vision</cite>
-    </blockquote>
+    <!-- Espace publicitaire (WordPress : zone de widget) -->
+    <aside class="ad-slot reveal" aria-label="Espace publicitaire">
+      <div class="ad-slot__text">
+        <p class="ad-slot__label">Espace publicitaire</p>
+        <p class="ad-slot__title">Votre publicité ici</p>
+        <p class="ad-slot__sub">Bannière visible par tous les visiteurs du site de l'OC Lisala.</p>
+      </div>
+      <a class="btn btn--primary" href="#contact" data-whatsapp data-wa-text="Bonjour, je souhaite réserver l'espace publicitaire du site de l'OC Lisala.">Réserver cet espace</a>
+    </aside>
   </div>
 </section>
 
@@ -424,7 +404,7 @@
           Associer votre marque à l'OC Lisala, c'est être présent auprès d'un public fidèle et participer
           concrètement au développement du sport et de la jeunesse dans la Mongala.
         </p>
-        <a class="btn btn--primary" href="#contact" data-subject="Partenariat">Devenir partenaire</a>
+        <a class="btn btn--primary" href="#contact" data-whatsapp data-wa-text="Bonjour, je souhaite devenir partenaire de l'OC Lisala.">Devenir partenaire</a>
       </div>
     </div>
   </div>
@@ -457,7 +437,7 @@
         <li class="partner-slot">Emplacement logo partenaire</li>
         <li class="partner-slot">Emplacement logo partenaire</li>
       </ul>
-      <a class="btn btn--dark" href="#contact" data-subject="Partenariat">Devenir partenaire</a>
+      <a class="btn btn--dark" href="#contact" data-whatsapp data-wa-text="Bonjour, je souhaite devenir partenaire de l'OC Lisala.">Devenir partenaire</a>
     </div>
   </div>
 </section>
@@ -506,7 +486,7 @@
     <div class="contact__form reveal">
       <form class="form form--card" id="contact-form" novalidate>
         <h3 class="form__title">Envoyer un message</h3>
-        <p class="form__demo" role="note">Formulaire de démonstration : aucun message n'est envoyé pour l'instant.</p>
+        <p class="form__demo" role="note">Votre message s'ouvrira dans WhatsApp, prêt à être envoyé au club.</p>
         <div class="field">
           <label for="c-name">Nom <span aria-hidden="true">*</span></label>
           <input id="c-name" name="name" type="text" autocomplete="name" required minlength="2">
@@ -534,8 +514,8 @@
           <textarea id="c-message" name="message" rows="5" required minlength="10"></textarea>
           <p class="field__error" aria-live="polite"></p>
         </div>
-        <button class="btn btn--primary btn--block" type="submit">Envoyer</button>
-        <p class="form__success" role="status" hidden>Merci ! Votre message est valide. Ceci est une démonstration : il n'a pas été envoyé.</p>
+        <button class="btn btn--primary btn--block" type="submit">Envoyer sur WhatsApp</button>
+        <p class="form__success" role="status" hidden>Merci ! WhatsApp s'ouvre avec votre message : il ne reste plus qu'à appuyer sur Envoyer.</p>
       </form>
     </div>
   </div>
