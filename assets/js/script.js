@@ -3,6 +3,7 @@
    --------------------------------------------------------------------------
    1. Configuration du site (coordonnées, WhatsApp, réseaux)  ← À COMPLÉTER
    2. Emplacements de l'effectif (joueurs et staff)            ← À COMPLÉTER
+   2b. Matchs : calendrier et résultats                         ← À COMPLÉTER
    3. Modules : menu, défilement, équipe, modale, galerie, formulaires…
    ========================================================================== */
 
@@ -50,6 +51,22 @@ const TEAM_SLOTS = [
   { group: "attaquant", role: "Attaquant" },
   { group: "attaquant", role: "Attaquant" },
   { group: "attaquant", role: "Attaquant" }
+];
+
+/* 2b. MATCHS --------------------------------------------------------------
+   Un objet par rencontre, du plus ancien au plus récent. Exemples vides :
+   remplacer les valeurs entre crochets par les vraies informations.
+   status : "termine" | "en-cours" | "a-venir"
+   home   : true si l'OC Lisala reçoit, false s'il se déplace
+   score  : { club: 2, opponent: 1 } pour un match joué ou en cours
+   Le dernier match "termine" s'affiche dans la grande carte.
+   WordPress : type de contenu "Match". */
+const MATCHES = [
+  { date: "", competition: "", opponent: "", venue: "", home: true,  status: "termine", score: null },
+  { date: "", competition: "", opponent: "", venue: "", home: false, status: "termine", score: null },
+  { date: "", competition: "", opponent: "", venue: "", home: true,  status: "en-cours", score: null },
+  { date: "", competition: "", opponent: "", venue: "", home: false, status: "a-venir", score: null },
+  { date: "", competition: "", opponent: "", venue: "", home: true,  status: "a-venir", score: null }
 ];
 
 /* 3. MODULES ------------------------------------------------------------- */
@@ -217,7 +234,7 @@ const TEAM_SLOTS = [
         </div>
       </li>`).join("");
 
-    const buttons = $$(".filter");
+    const buttons = $$("[data-filter]");
     buttons.forEach((btn) => {
       btn.setAttribute("aria-pressed", String(btn.classList.contains("is-active")));
       btn.addEventListener("click", () => {
@@ -233,6 +250,86 @@ const TEAM_SLOTS = [
         });
       });
     });
+  }
+
+  /* --- Matchs : dernier match et tableau --- */
+  function initMatches() {
+    const body = $("#fixtures-body");
+    const card = $("#last-match");
+    if (!body || !card) return;
+
+    const STATUS = { "termine": "Terminé", "en-cours": "En cours", "a-venir": "À venir" };
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const val = (v, label) => (v ? esc(v) : `<span class="is-placeholder">[${label}]</span>`);
+    const hasScore = (m) => m.score && Number.isFinite(m.score.club) && Number.isFinite(m.score.opponent);
+    const scoreText = (m) => {
+      if (!hasScore(m)) return m.status === "a-venir" ? "–" : `<span class="is-placeholder">– : –</span>`;
+      const [a, b] = m.home ? [m.score.club, m.score.opponent] : [m.score.opponent, m.score.club];
+      return `${a} : ${b}`;
+    };
+    const teams = (m) => {
+      const club = "<strong>OC Lisala</strong>";
+      const opp = val(m.opponent, "Adversaire");
+      return m.home ? `${club} – ${opp}` : `${opp} – ${club}`;
+    };
+
+    // Tableau
+    body.innerHTML = MATCHES.map((m) => `
+      <tr data-status="${m.status}">
+        <td>${val(m.date, "Date")}</td>
+        <td>${val(m.competition, "Compétition")}</td>
+        <td class="fixtures__match">${teams(m)}</td>
+        <td class="fixtures__score">${scoreText(m)}</td>
+        <td><span class="status status--${m.status}">${STATUS[m.status] || ""}</span></td>
+      </tr>`).join("") + `<tr class="fixtures__empty" hidden><td colspan="5">Aucun match dans cette catégorie.</td></tr>`;
+
+    const buttons = $$("[data-match-filter]");
+    buttons.forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(btn.classList.contains("is-active")));
+      btn.addEventListener("click", () => {
+        const f = btn.dataset.matchFilter;
+        buttons.forEach((b) => {
+          b.classList.toggle("is-active", b === btn);
+          b.setAttribute("aria-pressed", String(b === btn));
+        });
+        let shown = 0;
+        $$("tr[data-status]", body).forEach((row) => {
+          const show = f === "all" || row.dataset.status === f;
+          row.classList.toggle("is-hidden", !show);
+          if (show) shown++;
+        });
+        $(".fixtures__empty", body).hidden = shown > 0;
+      });
+    });
+
+    // Carte "dernier match"
+    const last = MATCHES.filter((m) => m.status === "termine").pop();
+    if (!last) return;
+    const club = `<div class="last-match__team">
+        <img src="assets/img/logo/logo-badge.svg" alt="" width="88" height="92">
+        <span class="last-match__name">OC Lisala</span>
+      </div>`;
+    const opp = `<div class="last-match__team">
+        <span class="last-match__crest" aria-hidden="true">${last.opponentLogo ? `<img src="${esc(last.opponentLogo)}" alt="">` : "?"}</span>
+        <span class="last-match__name">${val(last.opponent, "Adversaire")}</span>
+      </div>`;
+    let result = "";
+    if (hasScore(last)) {
+      const d = last.score.club - last.score.opponent;
+      result = `<p class="last-match__result">${d > 0 ? "Victoire" : d < 0 ? "Défaite" : "Match nul"}</p>`;
+    }
+    const [a, b] = hasScore(last) ? (last.home ? [last.score.club, last.score.opponent] : [last.score.opponent, last.score.club]) : [null, null];
+    const n = (x) => (x === null ? `<span class="is-placeholder">–</span>` : x);
+    card.innerHTML = `
+      <div class="last-match__meta">
+        <span>${val(last.competition, "Compétition")}</span>
+        <span>${val(last.date, "Date")} · ${val(last.venue, "Stade")}</span>
+      </div>
+      <div class="last-match__board">
+        ${last.home ? club : opp}
+        <div class="last-match__score">${n(a)}<span class="last-match__sep">:</span>${n(b)}</div>
+        ${last.home ? opp : club}
+      </div>${result}`;
   }
 
   /* --- Modale réutilisable --- */
@@ -406,6 +503,7 @@ const TEAM_SLOTS = [
   initHeader();
   initReveal();
   initTeam();
+  initMatches();
   initModal();
   initNews();
   initGallery();

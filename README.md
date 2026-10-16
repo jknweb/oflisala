@@ -20,6 +20,7 @@ assets/
 | --- | --- |
 | Adresse, téléphone, e-mail, numéro WhatsApp, liens des réseaux | `SITE_CONFIG` en haut de `assets/js/script.js` |
 | Joueurs et staff (nom, photo, numéro) | `TEAM_SLOTS` dans `assets/js/script.js` |
+| Matchs (dernier match, calendrier, résultats) | `MATCHES` dans `assets/js/script.js` |
 | Photos | Remplacer les fichiers de `assets/img/photos/` (JPG ou WebP, < 250 Ko) et mettre à jour le `src` dans `index.html` |
 | Textes marqués `[À compléter]`, `is-placeholder` ou `tag-todo` | `index.html` |
 | Articles d'actualité | Cartes `.news-card` et `<template id="article-N">` dans `index.html` |
@@ -36,5 +37,5 @@ Polices : Montserrat (titres), Barlow Condensed (labels), Barlow (texte).
 ## Vers WordPress
 
 Chaque section porte un commentaire indiquant son futur fichier de thème (`header.php`, `template-parts/section-*.php`, `footer.php`…).
-Les composants répétés (`.news-card`, `.person-card`, `.offer-card`, `.org-card`, `.feature-card`) correspondent aux futures boucles de contenu,
+Les composants répétés (`.news-card`, `.person-card`, `.offer-card`, `.org-card`, lignes du tableau des matchs) correspondent aux futures boucles de contenu,
 et `SITE_CONFIG` aux réglages du thème. Les formulaires sont en mode démonstration (aucun envoi) : à brancher sur Contact Form 7 ou WPForms.

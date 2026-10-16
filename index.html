@@ -45,15 +45,13 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <ul class="main-nav__list">
-        <li><a class="main-nav__link" href="#accueil">Accueil</a></li>
-        <li><a class="main-nav__link" href="#club">Le Club</a></li>
-        <li><a class="main-nav__link" href="#projet">Projet sportif</a></li>
-        <li><a class="main-nav__link" href="#equipe">Équipe</a></li>
+        <li><a class="main-nav__link" href="#presentation">Présentation</a></li>
         <li><a class="main-nav__link" href="#actualites">Actualités</a></li>
+        <li><a class="main-nav__link" href="#equipe">L'Équipe</a></li>
+        <li><a class="main-nav__link" href="#mediatheque">Médiathèque</a></li>
         <li><a class="main-nav__link" href="#partenaires">Partenaires</a></li>
-        <li><a class="main-nav__link" href="#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--primary btn--sm main-nav__cta" href="#partenaires">Devenir partenaire</a>
+      <a class="btn btn--primary btn--sm main-nav__cta" href="#contact">Contact</a>
     </nav>
 
     <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu">
@@ -85,21 +83,21 @@
       <span class="text-accent">un club.</span>
     </h1>
     <p class="hero__lead">
-      L'Olympique Club de Lisala est le nouveau club de football de la ville. Nous construisons une équipe
-      compétitive, encadrée et ambitieuse, portée par toute la Mongala.
+      L'Olympique Club de Lisala porte les couleurs de la ville sur les terrains de la Mongala.
+      Rouge et noir, solidaires et ambitieux.
     </p>
     <div class="hero__actions">
-      <a class="btn btn--primary" href="#club">Découvrir le club</a>
+      <a class="btn btn--primary" href="#presentation">Découvrir le club</a>
       <a class="btn btn--outline-light" href="#partenaires">Devenir partenaire</a>
     </div>
   </div>
 
-  <a class="hero__scroll" href="#club" aria-label="Descendre vers la présentation du club">
+  <a class="hero__scroll" href="#matchs" aria-label="Descendre vers le dernier match">
     <span></span>
   </a>
 </section>
 
-<!-- Bande de chiffres clés : valeurs non confirmées, à compléter -->
+<!-- Bande d'identité -->
 <section class="keyfacts" aria-label="Le club en bref">
   <div class="container keyfacts__grid">
     <div class="keyfact">
@@ -111,36 +109,99 @@
       <span class="keyfact__label">Notre province</span>
     </div>
     <div class="keyfact">
-      <span class="keyfact__value is-placeholder">[Année]</span>
-      <span class="keyfact__label">Création du club</span>
+      <span class="keyfact__value">Rouge &amp; Noir</span>
+      <span class="keyfact__label">Nos couleurs</span>
     </div>
     <div class="keyfact">
-      <span class="keyfact__value">En cours</span>
-      <span class="keyfact__label">Phase de structuration</span>
+      <span class="keyfact__value">RD Congo</span>
+      <span class="keyfact__label">Notre pays</span>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     2. LE CLUB  ·  WordPress : template-parts/section-club.php
+     DERNIER MATCH + CALENDRIER / RÉSULTATS
+     WordPress : type de contenu "Match". Données dans MATCHES (script.js).
      ============================================================ -->
-<section class="section section--club" id="club" aria-labelledby="club-title">
+<section class="section section--dark section--matches" id="matchs" aria-labelledby="matches-title">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow eyebrow--light">Dernier match</p>
+        <h2 class="section-title section-title--light" id="matches-title">Le terrain parle</h2>
+      </div>
+      <p class="section-intro">Résultats et rencontres <span class="tag-todo">À compléter</span> avec le calendrier officiel du club.</p>
+    </div>
+
+    <!-- Carte du dernier match : remplie par script.js -->
+    <article class="last-match reveal" id="last-match" aria-live="polite">
+      <div class="last-match__meta">
+        <span class="last-match__competition is-placeholder">[Compétition]</span>
+        <span class="last-match__date is-placeholder">[Date] · [Stade]</span>
+      </div>
+      <div class="last-match__board">
+        <div class="last-match__team">
+          <img src="assets/img/logo/logo-badge.svg" alt="" width="88" height="92">
+          <span class="last-match__name">OC Lisala</span>
+        </div>
+        <div class="last-match__score"><span class="is-placeholder">–</span><span class="last-match__sep">:</span><span class="is-placeholder">–</span></div>
+        <div class="last-match__team">
+          <span class="last-match__crest" aria-hidden="true">?</span>
+          <span class="last-match__name is-placeholder">[Adversaire]</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Tableau de tous les matchs : passés, en cours, à venir -->
+    <div class="fixtures reveal">
+      <div class="fixtures__head">
+        <h3 class="subsection-title subsection-title--light">Calendrier et résultats</h3>
+        <div class="filters filters--matches" role="group" aria-label="Filtrer les matchs">
+          <button type="button" class="filter is-active" data-match-filter="all">Tous</button>
+          <button type="button" class="filter" data-match-filter="termine">Joués</button>
+          <button type="button" class="filter" data-match-filter="en-cours">En cours</button>
+          <button type="button" class="filter" data-match-filter="a-venir">À venir</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="fixtures__table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Compétition</th>
+              <th scope="col">Rencontre</th>
+              <th scope="col">Score</th>
+              <th scope="col">Statut</th>
+            </tr>
+          </thead>
+          <tbody id="fixtures-body">
+            <!-- Rempli par script.js à partir de MATCHES -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRÉSENTATION  ·  WordPress : template-parts/section-presentation.php
+     ============================================================ -->
+<section class="section section--club" id="presentation" aria-labelledby="club-title">
   <div class="container">
     <div class="split">
       <div class="split__text reveal">
-        <p class="eyebrow">Le Club</p>
-        <h2 class="section-title" id="club-title">Un club né à Lisala, pour Lisala</h2>
+        <p class="eyebrow">Présentation</p>
+        <h2 class="section-title" id="club-title">Le club de Lisala</h2>
         <p>
-          L'Olympique Club de Lisala (OC Lisala) est un club de football basé à Lisala, chef-lieu de la province
-          de la Mongala, en République démocratique du Congo. Il est aujourd'hui en phase de structuration.
+          L'Olympique Club de Lisala (OC Lisala) est le club de football de Lisala, chef-lieu de la province
+          de la Mongala, en République démocratique du Congo.
         </p>
         <p>
-          Son objectif est de bâtir une équipe compétitive, de participer aux championnats officiels et de
-          réunir autour de lui les supporters, les talents locaux et les partenaires qui croient au football
-          de la région.
+          Il réunit autour de ses couleurs rouge et noir les joueurs, les supporters et les partenaires qui
+          font vivre le football de la région.
         </p>
         <div class="split__actions">
-          <a class="btn btn--dark" href="#projet">Voir le projet sportif</a>
+          <a class="btn btn--dark" href="#equipe">Voir l'équipe</a>
         </div>
       </div>
       <figure class="split__media media-cut reveal">
@@ -164,75 +225,16 @@
       <article class="pillar reveal">
         <span class="pillar__num">03</span>
         <h3 class="pillar__title">Notre engagement</h3>
-        <p>Rassembler la population autour d'un projet sportif commun et rendre au territoire la fierté que le club reçoit de lui.</p>
+        <p>Rassembler la population autour du club et rendre au territoire la fierté que le club reçoit de lui.</p>
       </article>
     </div>
-  </div>
-</section>
 
-<!-- Valeurs (fond noir, trame ballon) -->
-<section class="section section--dark section--values" aria-labelledby="values-title">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow eyebrow--light">Nos valeurs</p>
-      <h2 class="section-title section-title--light" id="values-title">Ce qui nous fait jouer ensemble</h2>
-      <p class="section-intro">Valeurs proposées pour la maquette, <span class="tag-todo">À valider</span> par la direction du club.</p>
-    </div>
-    <ul class="values-grid">
-      <li class="value-card reveal">
-        <span class="value-card__icon" aria-hidden="true">★</span>
-        <h3>Ambition</h3>
-        <p>Viser haut, avec méthode et patience.</p>
-      </li>
-      <li class="value-card reveal">
-        <span class="value-card__icon" aria-hidden="true">★</span>
-        <h3>Discipline</h3>
-        <p>Le respect des règles, des adversaires et des arbitres.</p>
-      </li>
-      <li class="value-card reveal">
-        <span class="value-card__icon" aria-hidden="true">★</span>
-        <h3>Solidarité</h3>
-        <p>Un groupe uni sur le terrain et en dehors.</p>
-      </li>
-      <li class="value-card reveal">
-        <span class="value-card__icon" aria-hidden="true">★</span>
-        <h3>Fierté</h3>
-        <p>Porter haut les couleurs de Lisala et de la Mongala.</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Histoire et organisation -->
-<section class="section section--light" aria-labelledby="history-title">
-  <div class="container two-cols">
-    <div class="reveal">
-      <p class="eyebrow">Histoire</p>
-      <h2 class="section-title" id="history-title">Les premières pages</h2>
-      <p>L'histoire de l'OC Lisala commence. Cette frise sera complétée au fil des étapes officielles du club.</p>
-      <ol class="timeline">
-        <li class="timeline__item">
-          <span class="timeline__date is-placeholder">[Date]</span>
-          <h3 class="timeline__title">Création du club</h3>
-          <p class="is-placeholder">[Texte à compléter : circonstances de la fondation, fondateurs à citer avec leur accord.]</p>
-        </li>
-        <li class="timeline__item">
-          <span class="timeline__date is-placeholder">[Date]</span>
-          <h3 class="timeline__title">Structuration et identité visuelle</h3>
-          <p>Adoption du logo officiel et de la charte graphique du club.</p>
-        </li>
-        <li class="timeline__item timeline__item--next">
-          <span class="timeline__date">Prochaine étape</span>
-          <h3 class="timeline__title">Constitution de l'équipe</h3>
-          <p>Détection, recrutement et premiers entraînements.</p>
-        </li>
-      </ol>
-    </div>
-
-    <div class="reveal">
-      <p class="eyebrow">Organisation</p>
-      <h2 class="section-title">Qui fait vivre le club</h2>
-      <p>Organigramme provisoire. Les noms seront ajoutés une fois les fonctions officiellement attribuées.</p>
+    <!-- Organisation -->
+    <div class="org reveal">
+      <div class="section-head">
+        <p class="eyebrow">Organisation</p>
+        <h3 class="subsection-title">Qui fait vivre le club</h3>
+      </div>
       <!-- Composant réutilisable : .org-card (WordPress : boucle sur un type de contenu "Dirigeant") -->
       <ul class="org-grid">
         <li class="org-card">
@@ -265,147 +267,7 @@
 </section>
 
 <!-- ============================================================
-     3. PROJET SPORTIF  ·  WordPress : template-parts/section-projet.php
-     ============================================================ -->
-<section class="section section--projet" id="projet" aria-labelledby="projet-title">
-  <div class="container">
-    <div class="split split--reverse">
-      <div class="split__text reveal">
-        <p class="eyebrow">Projet sportif</p>
-        <h2 class="section-title" id="projet-title">Construire une équipe qui gagne, étape par étape</h2>
-        <p>
-          Le projet sportif de l'OC Lisala repose sur une idée simple : avant de viser les résultats, il faut
-          un groupe solide, un encadrement qualifié et des conditions de travail sérieuses.
-        </p>
-        <ul class="checklist">
-          <li>Constituer un effectif compétitif à partir des talents locaux</li>
-          <li>Mettre en place un encadrement technique et médical</li>
-          <li>Équiper les joueurs et sécuriser un terrain d'entraînement</li>
-          <li>Préparer l'engagement dans les compétitions officielles</li>
-        </ul>
-      </div>
-      <figure class="split__media media-cut media-cut--left reveal">
-        <!-- PHOTO À REMPLACER : séance d'entraînement (1200×900) -->
-        <img src="assets/img/photos/projet.svg" alt="Photo provisoire : séance d'entraînement" width="1200" height="900" loading="lazy">
-      </figure>
-    </div>
-
-    <!-- Composant réutilisable : .feature-card -->
-    <div class="features">
-      <article class="feature-card reveal">
-        <span class="feature-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4Z"/></svg>
-        </span>
-        <h3>Ambitions</h3>
-        <p>Devenir un acteur reconnu du football de la Mongala, puis viser plus haut avec le temps.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="feature-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M10 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
-        </span>
-        <h3>Structuration de l'équipe</h3>
-        <p>Détection, essais et recrutement pour former un effectif équilibré à chaque poste.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="feature-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg>
-        </span>
-        <h3>Encadrement</h3>
-        <p>Un staff technique, un préparateur physique et un suivi médical pour accompagner les joueurs.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="feature-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3c0 2-1.8 3-4 3S8 5 8 3Z"/></svg>
-        </span>
-        <h3>Équipements</h3>
-        <p>Tenues de match et d'entraînement, ballons, matériel technique et trousse médicale.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="feature-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
-        </span>
-        <h3>Préparation aux compétitions</h3>
-        <p>Programme d'entraînement, matchs amicaux et démarches d'affiliation auprès des instances.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="feature-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg>
-        </span>
-        <h3>Formation des jeunes</h3>
-        <p>À terme, une filière jeunes pour faire grandir les talents de la ville au sein du club.</p>
-      </article>
-    </div>
-
-    <!-- Feuille de route : phases sans dates (dates à confirmer) -->
-    <div class="roadmap reveal">
-      <h3 class="roadmap__title">Feuille de route</h3>
-      <ol class="roadmap__steps">
-        <li class="roadmap__step is-current">
-          <span class="roadmap__phase">Phase 1</span>
-          <strong>Structuration</strong>
-          <span>Statuts, organisation, identité du club</span>
-        </li>
-        <li class="roadmap__step">
-          <span class="roadmap__phase">Phase 2</span>
-          <strong>Constitution de l'équipe</strong>
-          <span>Détection, recrutement, staff</span>
-        </li>
-        <li class="roadmap__step">
-          <span class="roadmap__phase">Phase 3</span>
-          <strong>Préparation</strong>
-          <span>Entraînements, matchs amicaux, équipements</span>
-        </li>
-        <li class="roadmap__step">
-          <span class="roadmap__phase">Phase 4</span>
-          <strong>Compétition</strong>
-          <span>Engagement en championnat</span>
-        </li>
-      </ol>
-      <p class="roadmap__note">Calendrier <span class="tag-todo">À compléter</span> une fois les dates confirmées.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     4. ÉQUIPE  ·  WordPress : template-parts/section-equipe.php
-     Les cartes sont générées par script.js à partir de TEAM_SLOTS
-     (WordPress : type de contenu "Joueur" / "Staff").
-     ============================================================ -->
-<section class="section section--dark section--team" id="equipe" aria-labelledby="team-title">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow eyebrow--light">Équipe</p>
-      <h2 class="section-title section-title--light" id="team-title">L'effectif en construction</h2>
-      <p class="section-intro">
-        Les emplacements ci-dessous sont prévus pour les joueurs, l'entraîneur et le staff. Ils seront
-        remplis au fur et à mesure des signatures officielles.
-      </p>
-    </div>
-
-    <div class="filters" role="group" aria-label="Filtrer l'effectif">
-      <button type="button" class="filter is-active" data-filter="all">Tous</button>
-      <button type="button" class="filter" data-filter="staff">Staff</button>
-      <button type="button" class="filter" data-filter="gardien">Gardiens</button>
-      <button type="button" class="filter" data-filter="defenseur">Défenseurs</button>
-      <button type="button" class="filter" data-filter="milieu">Milieux</button>
-      <button type="button" class="filter" data-filter="attaquant">Attaquants</button>
-    </div>
-
-    <ul class="team-grid" id="team-grid" aria-live="polite">
-      <!-- Rempli par script.js. Version de secours sans JavaScript : -->
-      <li class="person-card">
-        <div class="person-card__photo" aria-hidden="true"></div>
-        <div class="person-card__body">
-          <span class="person-card__role">Entraîneur principal</span>
-          <span class="person-card__name is-placeholder">[Nom à compléter]</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================================================
-     5. ACTUALITÉS  ·  WordPress : boucle d'articles (home.php / archive.php)
+     ACTUALITÉS  ·  WordPress : boucle d'articles (home.php / archive.php)
      ============================================================ -->
 <section class="section section--light" id="actualites" aria-labelledby="news-title">
   <div class="container">
@@ -427,7 +289,7 @@
         <div class="news-card__body">
           <span class="news-card__meta is-placeholder">[Date de publication]</span>
           <h3 class="news-card__title"><a href="#article-1" data-open-article="1">L'OC Lisala lance son site officiel</a></h3>
-          <p class="news-card__excerpt">Le club se dote d'un site pour présenter son projet, son équipe et ses besoins de partenariat.</p>
+          <p class="news-card__excerpt">Présentation, équipe, résultats, médiathèque : toute l'actualité du club au même endroit.</p>
           <a class="link-arrow" href="#article-1" data-open-article="1">Lire l'article</a>
         </div>
       </article>
@@ -458,11 +320,57 @@
         </div>
       </article>
     </div>
+  </div>
+</section>
 
-    <!-- Galerie photo -->
-    <div class="gallery-head reveal">
-      <h3 class="subsection-title">Galerie</h3>
-      <p>Photos provisoires. Cliquez pour agrandir.</p>
+<!-- ============================================================
+     L'ÉQUIPE  ·  WordPress : template-parts/section-equipe.php
+     Les cartes sont générées par script.js à partir de TEAM_SLOTS
+     (WordPress : type de contenu "Joueur" / "Staff").
+     ============================================================ -->
+<section class="section section--dark section--team" id="equipe" aria-labelledby="team-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow--light">L'Équipe</p>
+      <h2 class="section-title section-title--light" id="team-title">Le Club</h2>
+      <p class="section-intro">
+        Les joueurs, l'entraîneur et le staff qui portent les couleurs de l'OC Lisala.
+      </p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filtrer l'effectif">
+      <button type="button" class="filter is-active" data-filter="all">Tous</button>
+      <button type="button" class="filter" data-filter="staff">Staff</button>
+      <button type="button" class="filter" data-filter="gardien">Gardiens</button>
+      <button type="button" class="filter" data-filter="defenseur">Défenseurs</button>
+      <button type="button" class="filter" data-filter="milieu">Milieux</button>
+      <button type="button" class="filter" data-filter="attaquant">Attaquants</button>
+    </div>
+
+    <ul class="team-grid" id="team-grid" aria-live="polite">
+      <!-- Rempli par script.js. Version de secours sans JavaScript : -->
+      <li class="person-card">
+        <div class="person-card__photo" aria-hidden="true"></div>
+        <div class="person-card__body">
+          <span class="person-card__role">Entraîneur principal</span>
+          <span class="person-card__name is-placeholder">[Nom à compléter]</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     MÉDIATHÈQUE  ·  WordPress : page-mediatheque.php (galerie)
+     ============================================================ -->
+<section class="section section--media" id="mediatheque" aria-labelledby="media-title">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow">Médiathèque</p>
+        <h2 class="section-title" id="media-title">Photos et vidéos</h2>
+      </div>
+      <p class="section-intro">Photos provisoires. Cliquez pour agrandir.</p>
     </div>
     <ul class="gallery" id="gallery">
       <li class="gallery__item gallery__item--wide"><button type="button" class="gallery__btn" data-full="assets/img/photos/galerie-1.svg" data-caption="Entraînement (photo à remplacer)"><img src="assets/img/photos/galerie-1.svg" alt="Photo provisoire : entraînement" width="1200" height="800" loading="lazy"></button></li>
@@ -475,7 +383,7 @@
 </section>
 
 <!-- ============================================================
-     6. DEVENIR PARTENAIRE  ·  WordPress : page-partenaires.php
+     PARTENAIRES  ·  WordPress : page-partenaires.php
      ============================================================ -->
 <section class="section section--partners" id="partenaires" aria-labelledby="partners-title">
   <div class="partners-hero">
@@ -484,8 +392,7 @@
         <p class="eyebrow eyebrow--light">Devenir partenaire</p>
         <h2 class="section-title section-title--light" id="partners-title">Écrivons ensemble l'histoire du club</h2>
         <p>
-          L'OC Lisala démarre. C'est le moment où chaque soutien compte le plus et où votre marque peut être
-          associée dès le départ à un projet porteur pour toute une ville.
+          Associez votre marque à l'Olympique Club de Lisala et à la fierté de toute une ville.
         </p>
         <p>
           Les partenaires du club bénéficient d'une visibilité locale forte et participent concrètement au
@@ -501,20 +408,6 @@
   </div>
 
   <div class="container">
-    <!-- Besoins de financement : postes réels du projet, montants à définir -->
-    <div class="section-head reveal">
-      <h3 class="subsection-title">Nos besoins de financement</h3>
-      <p class="section-intro">Montants <span class="tag-todo">À définir</span> avec la trésorerie du club.</p>
-    </div>
-    <ul class="needs-grid">
-      <li class="need reveal"><span class="need__label">Équipements</span><p>Tenues, ballons, matériel d'entraînement</p><span class="need__amount is-placeholder">[Montant]</span></li>
-      <li class="need reveal"><span class="need__label">Déplacements</span><p>Transport, hébergement et repas pour les matchs</p><span class="need__amount is-placeholder">[Montant]</span></li>
-      <li class="need reveal"><span class="need__label">Encadrement</span><p>Staff technique et suivi médical</p><span class="need__amount is-placeholder">[Montant]</span></li>
-      <li class="need reveal"><span class="need__label">Infrastructures</span><p>Terrain, vestiaires, entretien</p><span class="need__amount is-placeholder">[Montant]</span></li>
-      <li class="need reveal"><span class="need__label">Affiliation et licences</span><p>Inscriptions et frais administratifs</p><span class="need__amount is-placeholder">[Montant]</span></li>
-      <li class="need reveal"><span class="need__label">Jeunes</span><p>Détection et formation des talents locaux</p><span class="need__amount is-placeholder">[Montant]</span></li>
-    </ul>
-
     <!-- Formules de partenariat : composant .offer-card -->
     <div class="section-head reveal">
       <h3 class="subsection-title">Possibilités de partenariat</h3>
@@ -641,7 +534,7 @@
 </section>
 
 <!-- ============================================================
-     7. CONTACT  ·  WordPress : page-contact.php
+     CONTACT  ·  WordPress : page-contact.php
      Les coordonnées sont injectées depuis SITE_CONFIG (script.js).
      ============================================================ -->
 <section class="section section--light" id="contact" aria-labelledby="contact-title">
@@ -734,10 +627,11 @@
     <nav class="site-footer__col" aria-label="Plan du site">
       <h2 class="site-footer__title">Le site</h2>
       <ul>
-        <li><a href="#club">Le Club</a></li>
-        <li><a href="#projet">Projet sportif</a></li>
-        <li><a href="#equipe">Équipe</a></li>
+        <li><a href="#presentation">Présentation</a></li>
         <li><a href="#actualites">Actualités</a></li>
+        <li><a href="#equipe">L'Équipe</a></li>
+        <li><a href="#mediatheque">Médiathèque</a></li>
+        <li><a href="#matchs">Calendrier et résultats</a></li>
       </ul>
     </nav>
     <nav class="site-footer__col" aria-label="Liens utiles">
@@ -786,14 +680,14 @@
   <p class="eyebrow">Club</p>
   <h2 id="modal-title" class="modal__title">L'OC Lisala lance son site officiel</h2>
   <p class="is-placeholder">[Date de publication]</p>
-  <p>L'Olympique Club de Lisala dispose désormais d'un site officiel. Il présente le club, son projet sportif, l'équipe en construction et les possibilités de partenariat.</p>
+  <p>L'Olympique Club de Lisala dispose désormais d'un site officiel. On y retrouve la présentation du club, l'équipe, le calendrier et les résultats, la médiathèque et les possibilités de partenariat.</p>
   <p class="is-placeholder">[Texte à compléter par le service communication du club.]</p>
 </template>
 <template id="article-2">
   <p class="eyebrow">Partenariat</p>
   <h2 id="modal-title" class="modal__title">Appel aux entreprises et partenaires</h2>
   <p class="is-placeholder">[Date de publication]</p>
-  <p>Pour réussir sa structuration, le club recherche des partenaires prêts à soutenir les équipements, les déplacements, l'encadrement et la formation des jeunes.</p>
+  <p>Le club recherche des partenaires prêts à soutenir les équipements, les déplacements, l'encadrement et la formation des jeunes.</p>
   <p>Les entreprises intéressées peuvent remplir le formulaire de la rubrique « Devenir partenaire ».</p>
   <p><a class="btn btn--primary" href="#form-partenaire" data-action="close-modal">Devenir partenaire</a></p>
 </template>
