@@ -39,7 +39,7 @@ Pour mettre les photos du club : remplacer l'attribut `src` (et `srcset` pour la
 ## Couleurs
 
 Rouge principal `#A3060F` (dominant), noir `#1C1C1E`, blanc `#FFFFFF`, vert terrain `#2F7A43` en accent.
-Polices : Oswald (titres, chiffres et labels), Inter (texte).
+Polices : Teko (titres, chiffres et labels), Inter (texte).
 
 ## Vers WordPress
 

@@ -34,8 +34,8 @@
   --text: var(--black);
   --text-muted: #55555B;
 
-  --font-title: "Oswald", "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
-  --font-label: "Oswald", "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+  --font-title: "Teko", "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+  --font-label: "Teko", "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
   --font-body: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
 
   --container: 1240px;
