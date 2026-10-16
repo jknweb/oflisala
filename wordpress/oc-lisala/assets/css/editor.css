@@ -1,0 +1,5 @@
+/* Éditeur d'articles : mêmes polices et couleurs que le site. */
+body { font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif; font-size: 1.08rem; line-height: 1.65; color: #1C1C1E; }
+h1, h2, h3, h4, .editor-post-title__input { font-family: "Teko", "Arial Narrow", Arial, sans-serif; font-weight: 700; text-transform: uppercase; line-height: 1.1; }
+a { color: #A3060F; }
+blockquote { border-left: 4px solid #A3060F; padding-left: 22px; margin-left: 0; }

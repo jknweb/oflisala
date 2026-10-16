@@ -1,0 +1,48 @@
+/* OC Lisala · Pages « Gestion du site » */
+.ocl-settings { max-width: 1100px; }
+.ocl-settings__intro { font-size: 14px; max-width: 760px; color: #50575e; }
+.ocl-panel { margin: 20px 0; padding: 4px 24px 12px; background: #fff; border: 1px solid #dcdcde; border-left: 4px solid #A3060F; border-radius: 4px; scroll-margin-top: 50px; }
+.ocl-panel:target { box-shadow: 0 0 0 2px #A3060F; }
+.ocl-panel__title { margin: 18px 0 6px; font-size: 16px; }
+.ocl-panel .form-table th { width: 230px; }
+.ocl-settings__save { position: sticky; bottom: 0; z-index: 10; display: flex; gap: 10px; align-items: center; margin: 0 -2px; padding: 14px 2px; background: rgba(240, 240, 241, .96); border-top: 1px solid #dcdcde; }
+
+.ocl-media__preview { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.ocl-media__preview:empty { display: none; }
+.ocl-media__preview img { width: 120px; height: 90px; object-fit: cover; border-radius: 4px; border: 1px solid #dcdcde; background: #f6f7f7; }
+.ocl-media__remove { margin-left: 8px !important; }
+
+.ocl-link .ocl-link__url, .ocl-link .ocl-link__whatsapp { margin: 6px 0; }
+.ocl-link label { display: block; margin-bottom: 4px; font-weight: 600; }
+.ocl-link[data-type="whatsapp"] .ocl-link__url { display: none; }
+.ocl-link[data-type="url"] .ocl-link__whatsapp { display: none; }
+
+.ocl-repeater__rows { margin: 0 0 10px; list-style: none; }
+.ocl-repeater__row { margin: 0 0 10px; background: #f6f7f7; border: 1px solid #dcdcde; border-radius: 4px; }
+.ocl-repeater__bar { display: flex; align-items: center; gap: 8px; padding: 6px 10px; background: #fff; border-bottom: 1px solid #dcdcde; border-radius: 4px 4px 0 0; }
+.ocl-repeater__handle { cursor: move; color: #8c8f94; }
+.ocl-repeater__handle:hover { color: #A3060F; }
+.ocl-repeater__num { font-weight: 700; color: #A3060F; }
+.ocl-repeater__remove { margin-left: auto !important; }
+.ocl-repeater__fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 16px; padding: 12px; }
+.ocl-repeater__field label { display: block; margin-bottom: 4px; font-weight: 600; }
+.ocl-repeater__field--textarea { grid-column: 1 / -1; }
+.ocl-repeater__field input[type="text"], .ocl-repeater__field select, .ocl-repeater__field textarea { width: 100%; max-width: none; }
+.ocl-repeater__field--checkbox { align-self: end; padding-bottom: 6px; }
+.ocl-repeater__placeholder { height: 60px; margin-bottom: 10px; border: 2px dashed #A3060F; border-radius: 4px; background: #fff; }
+
+.ocl-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 20px 0; }
+.ocl-card { display: flex; flex-direction: column; padding: 18px 20px; background: #fff; border: 1px solid #dcdcde; border-top: 4px solid #A3060F; border-radius: 4px; }
+.ocl-card h2 { margin: 0 0 6px; font-size: 16px; }
+.ocl-card p { margin: 0 0 14px; color: #50575e; }
+.ocl-card .button { margin-top: auto; align-self: flex-start; }
+.ocl-card.is-disabled { opacity: .7; border-top-color: #8c8f94; }
+
+/* Apparence > Menus : cases d'affichage */
+.field-ocl-visibility { margin: 8px 0; }
+.field-ocl-visibility legend { font-style: italic; }
+
+@media (max-width: 782px) {
+  .ocl-panel { padding: 4px 14px 10px; }
+  .ocl-panel .form-table th { width: auto; }
+}
