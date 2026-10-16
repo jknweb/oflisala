@@ -191,6 +191,16 @@ figure, blockquote { margin: 0; }
 }
 .hero__media, .hero__overlay { position: absolute; inset: 0; z-index: -2; }
 .hero__media .photo { animation: hero-zoom 16s ease-out both; }
+.hero__media .photo.hero-slide { position: absolute; inset: 0; object-position: center 30%; opacity: 0; animation: hero-slide 14s linear infinite; will-change: opacity, transform; }
+.hero__media .hero-slide:nth-of-type(1) { animation-delay: -1.12s; }
+.hero__media .hero-slide:nth-of-type(2) { animation-delay: 5.88s; }
+@keyframes hero-slide {
+  0% { opacity: 0; transform: scale(1.08); }
+  8% { opacity: 1; }
+  50% { opacity: 1; }
+  58% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
 .hero__overlay {
   z-index: -1;
   background:
@@ -474,6 +484,8 @@ body.no-scroll { overflow: hidden; }
   .reveal { opacity: 1; transform: none; }
   .media--slides .banner-slide { animation: none !important; }
   .media--slides .banner-slide:nth-of-type(1) { opacity: 1; }
+  .hero__media .hero-slide { animation: none !important; }
+  .hero__media .hero-slide:nth-of-type(1) { opacity: 1; }
 }
 
 /* 14. Responsive --------------------------------------------------------- */
