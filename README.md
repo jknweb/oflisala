@@ -16,7 +16,7 @@ images/logo/      Logo officiel du club (SVG) et icônes
 
 | Quoi | Où |
 | --- | --- |
-| Adresse, téléphone, e-mail, WhatsApp, réseaux sociaux | `SITE_CONFIG` en haut de `script.js` (le bouton WhatsApp apparaît dès que le numéro est renseigné) |
+| Téléphone, e-mail, WhatsApp, réseaux sociaux (adresse déjà renseignée) | `SITE_CONFIG` en haut de `script.js` (le bouton WhatsApp apparaît dès que le numéro est renseigné) |
 | Joueurs, entraîneur, staff (nom, numéro, photo) | `TEAM` dans `script.js` |
 | Histoire, date de fondation, stade | Section `#club` de `index.html` |
 | Articles | Cartes `.news-card` et `<template id="article-N">` dans `index.html` |

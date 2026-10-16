@@ -10,7 +10,7 @@
    Laisser une valeur vide tant que l'information officielle n'est pas connue.
    WordPress : ces réglages deviendront des options du thème (Customizer). */
 const SITE_CONFIG = {
-  address: "",      // ex. "Avenue …, Lisala"
+  address: "N° 1, avenue du Port, commune de Bolikango",  // complété automatiquement par ", Lisala, Mongala, RD Congo"
   phone: "",        // ex. "+243 8X XXX XX XX"
   email: "",        // ex. "contact@…"
   whatsapp: "",     // numéro international, chiffres uniquement, ex. "2438XXXXXXXX"
