@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FC Lisala · Site officiel du Football Club de Lisala</title>
+  <meta name="description" content="Site officiel du FC Lisala, club de football de Lisala, province de la Mongala, République démocratique du Congo. Le club, le projet sportif, l'équipe, les actualités et les partenaires.">
+  <meta name="theme-color" content="#A3060F">
+  <link rel="canonical" href="https://oflisala.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="FC Lisala · La passion d'une ville, l'ambition d'un club">
+  <meta property="og:description" content="Site officiel du Football Club de Lisala, Mongala, RD Congo.">
+  <meta property="og:image" content="images/logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+
+  <!-- Polices : Montserrat (titres), Barlow Condensed (chiffres, labels), Barlow (texte) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsTeam",
+    "name": "Football Club de Lisala",
+    "alternateName": "FC Lisala",
+    "sport": "Football",
+    "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Lisala", "addressRegion": "Mongala", "addressCountry": "CD" } }
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<!-- ============================================================
+     EN-TÊTE  ·  WordPress : header.php
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#accueil" aria-label="FC Lisala, retour à l'accueil">
+      <!-- Logo officiel du club (fichier fourni, non modifié) -->
+      <img class="brand__logo" src="images/logo/logo-badge.svg" alt="Logo du club" width="48" height="50">
+      <span class="brand__text">
+        <span class="brand__name">FC Lisala</span>
+        <span class="brand__sub">Football Club de Lisala</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul class="main-nav__list">
+        <li><a class="main-nav__link" href="#accueil">Accueil</a></li>
+        <li><a class="main-nav__link" href="#club">Le Club</a></li>
+        <li><a class="main-nav__link" href="#projet">Projet sportif</a></li>
+        <li><a class="main-nav__link" href="#equipe">Équipe</a></li>
+        <li><a class="main-nav__link" href="#actualites">Actualités</a></li>
+        <li><a class="main-nav__link" href="#partenaires">Partenaires</a></li>
+        <li><a class="main-nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- ============================================================
+     ACCUEIL  ·  WordPress : template-parts/section-accueil.php
+     ============================================================ -->
+<section class="hero" id="accueil" aria-labelledby="hero-title">
+  <div class="hero__media media">
+    <!-- Photo d'illustration (Pexels). À remplacer par une photo du FC Lisala. -->
+    <img class="photo"
+         src="https://images.pexels.com/photos/30782372/pexels-photo-30782372.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop"
+         srcset="https://images.pexels.com/photos/30782372/pexels-photo-30782372.jpeg?auto=compress&cs=tinysrgb&w=800&h=1100&fit=crop 800w,
+                 https://images.pexels.com/photos/30782372/pexels-photo-30782372.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop 1600w,
+                 https://images.pexels.com/photos/30782372/pexels-photo-30782372.jpeg?auto=compress&cs=tinysrgb&w=2200&h=1300&fit=crop 2200w"
+         sizes="100vw"
+         alt="Joueur de football contrôlant le ballon sur une pelouse" width="1600" height="1000" fetchpriority="high">
+  </div>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <!-- Habillage terrain : lignes de surface et rond central -->
+  <svg class="hero__pitch" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+    <rect x="40" y="40" width="520" height="520" />
+    <line x1="40" y1="300" x2="560" y2="300" />
+    <circle cx="300" cy="300" r="90" />
+    <circle cx="300" cy="300" r="4" class="dot" />
+    <rect x="190" y="40" width="220" height="90" />
+    <rect x="190" y="470" width="220" height="90" />
+  </svg>
+  <div class="hero__stripes" aria-hidden="true"></div>
+
+  <div class="container hero__content">
+    <p class="eyebrow eyebrow--light">Lisala · Mongala · RD Congo</p>
+    <h1 class="hero__title" id="hero-title">
+      <span class="hero__club">FC Lisala</span>
+      <span class="hero__line">La passion d'une ville,</span>
+      <span class="hero__line hero__line--accent">l'ambition d'un club.</span>
+    </h1>
+    <p class="hero__lead">
+      Le Football Club de Lisala porte les couleurs de sa ville sur les terrains de la Mongala.
+      Un club de caractère, uni autour de ses joueurs, de ses supporters et de ses partenaires.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#club">Découvrir le club</a>
+      <a class="btn btn--outline-light" href="#partenaires">Nos partenaires</a>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#club" aria-label="Descendre vers la présentation du club"><span></span></a>
+</section>
+
+<!-- Bandeau de chiffres (aucune statistique inventée : repères du jeu et du club) -->
+<section class="stats" aria-label="Le FC Lisala en quelques repères">
+  <div class="container stats__grid">
+    <div class="stat">
+      <span class="stat__value">1</span>
+      <span class="stat__label">Ville, Lisala</span>
+    </div>
+    <div class="stat">
+      <span class="stat__value">11</span>
+      <span class="stat__label">Joueurs, un seul maillot</span>
+    </div>
+    <div class="stat">
+      <span class="stat__value">90'</span>
+      <span class="stat__label">D'engagement à chaque match</span>
+    </div>
+    <div class="stat">
+      <span class="stat__value">100<small>%</small></span>
+      <span class="stat__label">Mongala</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LE CLUB  ·  WordPress : template-parts/section-club.php
+     ============================================================ -->
+<section class="section section--club" id="club" aria-labelledby="club-title">
+  <div class="container">
+    <div class="editorial">
+      <div class="editorial__text reveal">
+        <p class="eyebrow">Le Club</p>
+        <h2 class="section-title" id="club-title">Le club de Lisala, porté par sa ville</h2>
+        <p class="lead">
+          Le Football Club de Lisala (FC Lisala) est le club de football de Lisala, chef-lieu de la province
+          de la Mongala, au nord de la République démocratique du Congo.
+        </p>
+        <p>
+          Son identité tient en quelques mots : une ville fière, des joueurs engagés et des supporters
+          qui vivent chaque match avec passion. Le rouge du club est celui de cette énergie.
+        </p>
+        <p>
+          Le FC Lisala veut faire grandir le football local, révéler les talents de la région et
+          représenter dignement la Mongala dans les compétitions.
+        </p>
+        <!-- Contenu à compléter par le club : date de fondation, histoire, stade -->
+        <p class="note">Histoire du club, date de fondation et stade : <span class="tag-todo">À compléter par le club</span></p>
+      </div>
+      <div class="editorial__media reveal">
+        <figure class="media media--tall">
+          <img class="photo" src="https://images.pexels.com/photos/38242318/pexels-photo-38242318.jpeg?auto=compress&cs=tinysrgb&w=900&h=1100&fit=crop"
+               alt="Footballeur tenant un ballon sur un terrain" width="900" height="1100" loading="lazy">
+        </figure>
+        <figure class="media media--small">
+          <img class="photo" src="https://images.pexels.com/photos/38404136/pexels-photo-38404136.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"
+               alt="Jeune footballeur en maillot rouge tenant un ballon" width="600" height="600" loading="lazy">
+        </figure>
+        <span class="editorial__badge" aria-hidden="true">Rouge<br>&amp; fier</span>
+      </div>
+    </div>
+
+    <!-- Valeurs -->
+    <div class="values">
+      <article class="value reveal">
+        <span class="value__num">01</span>
+        <h3 class="value__title">Fierté locale</h3>
+        <p>Représenter Lisala et la Mongala sur chaque terrain, avec respect et détermination.</p>
+      </article>
+      <article class="value reveal">
+        <span class="value__num">02</span>
+        <h3 class="value__title">Esprit d'équipe</h3>
+        <p>Un groupe solidaire où chacun joue pour le collectif, sur le terrain comme en dehors.</p>
+      </article>
+      <article class="value reveal">
+        <span class="value__num">03</span>
+        <h3 class="value__title">Discipline</h3>
+        <p>Rigueur à l'entraînement, respect des adversaires, des arbitres et du public.</p>
+      </article>
+      <article class="value reveal">
+        <span class="value__num">04</span>
+        <h3 class="value__title">Ambition sportive</h3>
+        <p>Progresser saison après saison et viser les meilleures places du football congolais.</p>
+      </article>
+    </div>
+
+    <!-- Vision -->
+    <blockquote class="vision reveal">
+      <p>« Faire du FC Lisala un club respecté, reconnu pour son jeu, sa rigueur et la fierté qu'il donne à toute une ville. »</p>
+      <cite>Notre vision</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJET SPORTIF  ·  WordPress : template-parts/section-projet.php
+     ============================================================ -->
+<section class="section section--dark section--projet" id="projet" aria-labelledby="projet-title">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow eyebrow--light">Projet sportif</p>
+        <h2 class="section-title section-title--light" id="projet-title">Six axes pour aller plus haut</h2>
+      </div>
+      <p class="section-intro">Le projet du FC Lisala repose sur un travail sérieux et durable, sur le terrain et autour de l'équipe.</p>
+    </div>
+
+    <!-- Composant réutilisable : .axis-card -->
+    <div class="axes">
+      <article class="axis-card reveal">
+        <span class="axis-card__num">01</span>
+        <svg class="axis-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg>
+        <h3>Performance sportive</h3>
+        <p>Construire une équipe compétitive, capable de jouer chaque match pour gagner.</p>
+      </article>
+      <article class="axis-card reveal">
+        <span class="axis-card__num">02</span>
+        <svg class="axis-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>
+        <h3>Préparation</h3>
+        <p>Préparation physique, travail tactique et suivi régulier tout au long de la saison.</p>
+      </article>
+      <article class="axis-card reveal">
+        <span class="axis-card__num">03</span>
+        <svg class="axis-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-1a6 6 0 0 1 12 0v1M16 3.5a3 3 0 0 1 0 7M21 21v-1a6 6 0 0 0-4-5.6"/></svg>
+        <h3>Encadrement</h3>
+        <p>Un staff technique et médical qualifié pour accompagner chaque joueur.</p>
+      </article>
+      <article class="axis-card reveal">
+        <span class="axis-card__num">04</span>
+        <svg class="axis-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.9z"/></svg>
+        <h3>Développement des talents</h3>
+        <p>Repérer, former et faire progresser les jeunes joueurs de Lisala et de la région.</p>
+      </article>
+      <article class="axis-card reveal">
+        <span class="axis-card__num">05</span>
+        <svg class="axis-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3c0 2-1.8 3-4 3S8 5 8 3Z"/></svg>
+        <h3>Équipements</h3>
+        <p>Tenues, ballons, matériel d'entraînement et conditions de travail à la hauteur.</p>
+      </article>
+      <article class="axis-card reveal">
+        <span class="axis-card__num">06</span>
+        <svg class="axis-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 5h-5L8 10z"/></svg>
+        <h3>Compétitions</h3>
+        <p>S'engager pleinement dans les compétitions et y défendre les couleurs de la Mongala.</p>
+      </article>
+    </div>
+
+    <figure class="projet-banner media reveal">
+      <img class="photo" src="https://images.pexels.com/photos/36826363/pexels-photo-36826363.jpeg?auto=compress&cs=tinysrgb&w=1600&h=640&fit=crop"
+           alt="Jeune joueur en maillot rouge concentré sur le ballon pendant un entraînement" width="1600" height="640" loading="lazy">
+      <figcaption class="projet-banner__caption">
+        <span>Le travail d'aujourd'hui,</span>
+        <strong>les victoires de demain.</strong>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================
+     ÉQUIPE  ·  WordPress : types de contenu "Joueur" et "Staff"
+     Les cartes sont générées par script.js à partir de TEAM.
+     ============================================================ -->
+<section class="section section--team" id="equipe" aria-labelledby="team-title">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow">Équipe</p>
+        <h2 class="section-title" id="team-title">Joueurs et staff</h2>
+      </div>
+      <p class="section-intro">Fiches provisoires : noms, photos et numéros <span class="tag-todo">À compléter</span> avec l'effectif officiel.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filtrer l'effectif">
+      <button type="button" class="filter is-active" data-filter="all">Tous</button>
+      <button type="button" class="filter" data-filter="staff">Staff</button>
+      <button type="button" class="filter" data-filter="gardien">Gardiens</button>
+      <button type="button" class="filter" data-filter="defenseur">Défenseurs</button>
+      <button type="button" class="filter" data-filter="milieu">Milieux</button>
+      <button type="button" class="filter" data-filter="attaquant">Attaquants</button>
+    </div>
+
+    <ul class="team-grid" id="team-grid" aria-live="polite">
+      <!-- Rempli par script.js. Version de secours sans JavaScript : -->
+      <li class="player-card">
+        <div class="player-card__photo" aria-hidden="true"></div>
+        <div class="player-card__body">
+          <span class="player-card__role">Entraîneur principal</span>
+          <span class="player-card__name is-placeholder">Nom à compléter</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACTUALITÉS  ·  WordPress : boucle d'articles (home.php)
+     ============================================================ -->
+<section class="section section--light" id="actualites" aria-labelledby="news-title">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow">Actualités</p>
+        <h2 class="section-title" id="news-title">La vie du club</h2>
+      </div>
+      <p class="section-intro">Articles de démonstration, à remplacer par les annonces officielles du club.</p>
+    </div>
+
+    <!-- Composant réutilisable : .news-card (WordPress : content-excerpt.php) -->
+    <div class="news-grid">
+      <article class="news-card news-card--featured reveal">
+        <a class="news-card__media media" href="#article-1" data-open-article="1" tabindex="-1" aria-hidden="true">
+          <img class="photo" src="https://images.pexels.com/photos/32941171/pexels-photo-32941171.jpeg?auto=compress&cs=tinysrgb&w=1200&h=750&fit=crop" alt="" width="1200" height="750" loading="lazy">
+          <span class="news-card__cat">Match</span>
+        </a>
+        <div class="news-card__body">
+          <span class="news-card__meta"><span class="is-placeholder">Date à compléter</span> · Exemple</span>
+          <h3 class="news-card__title"><a href="#article-1" data-open-article="1">Avant-match : le groupe prêt pour la prochaine rencontre</a></h3>
+          <p class="news-card__excerpt">Composition, adversaire, lieu et horaire : le format type d'une annonce de match du FC Lisala.</p>
+          <a class="link-arrow" href="#article-1" data-open-article="1">Lire l'article</a>
+        </div>
+      </article>
+
+      <article class="news-card reveal">
+        <a class="news-card__media media" href="#article-2" data-open-article="2" tabindex="-1" aria-hidden="true">
+          <img class="photo" src="https://images.pexels.com/photos/28735311/pexels-photo-28735311.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="" width="800" height="500" loading="lazy">
+          <span class="news-card__cat">Entraînement</span>
+        </a>
+        <div class="news-card__body">
+          <span class="news-card__meta"><span class="is-placeholder">Date à compléter</span> · Exemple</span>
+          <h3 class="news-card__title"><a href="#article-2" data-open-article="2">Semaine d'entraînement : intensité et cohésion</a></h3>
+          <p class="news-card__excerpt">Retour sur les séances de la semaine et les points travaillés par le staff.</p>
+          <a class="link-arrow" href="#article-2" data-open-article="2">Lire l'article</a>
+        </div>
+      </article>
+
+      <article class="news-card reveal">
+        <a class="news-card__media media" href="#article-3" data-open-article="3" tabindex="-1" aria-hidden="true">
+          <img class="photo" src="https://images.pexels.com/photos/27294512/pexels-photo-27294512.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="" width="800" height="500" loading="lazy">
+          <span class="news-card__cat">Club</span>
+        </a>
+        <div class="news-card__body">
+          <span class="news-card__meta"><span class="is-placeholder">Date à compléter</span> · Exemple</span>
+          <h3 class="news-card__title"><a href="#article-3" data-open-article="3">Supporters : le FC Lisala compte sur vous</a></h3>
+          <p class="news-card__excerpt">Comment suivre le club, venir au stade et soutenir l'équipe tout au long de la saison.</p>
+          <a class="link-arrow" href="#article-3" data-open-article="3">Lire l'article</a>
+        </div>
+      </article>
+
+      <article class="news-card reveal">
+        <a class="news-card__media media" href="#article-4" data-open-article="4" tabindex="-1" aria-hidden="true">
+          <img class="photo" src="https://images.pexels.com/photos/38404129/pexels-photo-38404129.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="" width="800" height="500" loading="lazy">
+          <span class="news-card__cat">Vie sportive</span>
+        </a>
+        <div class="news-card__body">
+          <span class="news-card__meta"><span class="is-placeholder">Date à compléter</span> · Exemple</span>
+          <h3 class="news-card__title"><a href="#article-4" data-open-article="4">Jeunes talents : le club ouvre ses portes</a></h3>
+          <p class="news-card__excerpt">Le format d'une annonce de détection : catégories, lieu, date et documents à apporter.</p>
+          <a class="link-arrow" href="#article-4" data-open-article="4">Lire l'article</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PARTENAIRES  ·  WordPress : template-parts/section-partenaires.php
+     ============================================================ -->
+<section class="section section--partners" id="partenaires" aria-labelledby="partners-title">
+  <div class="partners-hero">
+    <div class="partners-hero__media media" aria-hidden="true">
+      <img class="photo" src="https://images.pexels.com/photos/34927818/pexels-photo-34927818.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop" alt="" width="1600" height="900" loading="lazy">
+    </div>
+    <div class="container partners-hero__inner">
+      <div class="reveal">
+        <p class="eyebrow eyebrow--light">Partenaires</p>
+        <h2 class="section-title section-title--light" id="partners-title">Soutenir le FC Lisala, c'est soutenir toute une ville</h2>
+        <p class="partners-hero__lead">
+          Associer votre marque au FC Lisala, c'est être présent auprès d'un public fidèle et participer
+          concrètement au développement du sport et de la jeunesse dans la Mongala.
+        </p>
+        <a class="btn btn--primary" href="#contact" data-subject="Partenariat">Devenir partenaire</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="benefits">
+      <li class="benefit reveal">
+        <span class="benefit__num">01</span>
+        <h3>Visibilité locale</h3>
+        <p>Votre marque sur les maillots, au bord du terrain, sur le site et les réseaux du club.</p>
+      </li>
+      <li class="benefit reveal">
+        <span class="benefit__num">02</span>
+        <h3>Ancrage dans la Mongala</h3>
+        <p>Un lien direct avec les habitants de Lisala et une image positive dans toute la province.</p>
+      </li>
+      <li class="benefit reveal">
+        <span class="benefit__num">03</span>
+        <h3>Impact sur la jeunesse</h3>
+        <p>Un soutien utile : équipements, encadrement, déplacements et formation des jeunes talents.</p>
+      </li>
+    </ul>
+
+    <!-- Logos partenaires : emplacements vides, aucun sponsor fictif -->
+    <div class="partner-logos reveal">
+      <h3 class="partner-logos__title">Partenaires officiels</h3>
+      <ul class="partner-logos__list">
+        <li class="partner-slot">Emplacement logo partenaire</li>
+        <li class="partner-slot">Emplacement logo partenaire</li>
+        <li class="partner-slot">Emplacement logo partenaire</li>
+        <li class="partner-slot">Emplacement logo partenaire</li>
+      </ul>
+      <a class="btn btn--dark" href="#contact" data-subject="Partenariat">Devenir partenaire</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT  ·  WordPress : page-contact.php
+     Coordonnées injectées depuis SITE_CONFIG (script.js).
+     ============================================================ -->
+<section class="section section--light" id="contact" aria-labelledby="contact-title">
+  <div class="container contact">
+    <div class="contact__info reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title" id="contact-title">Parlons football</h2>
+      <p>Supporters, joueurs, partenaires ou médias : écrivez au FC Lisala.</p>
+
+      <ul class="contact-list">
+        <li>
+          <span class="contact-list__label">Adresse</span>
+          <span class="contact-list__value" data-config="address">Adresse à compléter, Lisala, Mongala, RD Congo</span>
+        </li>
+        <li>
+          <span class="contact-list__label">Téléphone</span>
+          <span class="contact-list__value" data-config="phone">Numéro à compléter</span>
+        </li>
+        <li>
+          <span class="contact-list__label">E-mail</span>
+          <span class="contact-list__value" data-config="email">E-mail à compléter</span>
+        </li>
+      </ul>
+
+      <a class="btn btn--whatsapp" href="#contact" data-whatsapp hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+        Écrire sur WhatsApp
+      </a>
+
+      <h3 class="contact__social-title">Suivre le club</h3>
+      <ul class="socials">
+        <li><a class="social" href="#contact" data-social="facebook" aria-label="Facebook du FC Lisala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.5V11H7v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1Z"/></svg></a></li>
+        <li><a class="social" href="#contact" data-social="instagram" aria-label="Instagram du FC Lisala"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a></li>
+        <li><a class="social" href="#contact" data-social="youtube" aria-label="YouTube du FC Lisala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.4-1.2.4-3.8.4-3.8s0-2.6-.4-3.8ZM10 15V9l5.2 3L10 15Z"/></svg></a></li>
+        <li><a class="social" href="#contact" data-social="tiktok" aria-label="TikTok du FC Lisala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.4 2.4 1.9 3.8 4.3 4v3.3c-1.6 0-3-.4-4.3-1.2v6.1A6.3 6.3 0 1 1 10.2 9v3.4a3 3 0 1 0 2.9 3V3h3.4Z"/></svg></a></li>
+      </ul>
+      <p class="note" data-socials-note>Liens des réseaux sociaux et numéro WhatsApp <span class="tag-todo">À compléter</span></p>
+    </div>
+
+    <div class="contact__form reveal">
+      <form class="form form--card" id="contact-form" novalidate>
+        <h3 class="form__title">Envoyer un message</h3>
+        <p class="form__demo" role="note">Formulaire de démonstration : aucun message n'est envoyé pour l'instant.</p>
+        <div class="field">
+          <label for="c-name">Nom <span aria-hidden="true">*</span></label>
+          <input id="c-name" name="name" type="text" autocomplete="name" required minlength="2">
+          <p class="field__error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="c-email">Adresse e-mail <span aria-hidden="true">*</span></label>
+          <input id="c-email" name="email" type="email" autocomplete="email" required>
+          <p class="field__error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="c-subject">Sujet <span aria-hidden="true">*</span></label>
+          <select id="c-subject" name="subject" required>
+            <option value="">Choisir…</option>
+            <option>Partenariat</option>
+            <option>Supporters</option>
+            <option>Rejoindre l'équipe</option>
+            <option>Presse et médias</option>
+            <option>Autre</option>
+          </select>
+          <p class="field__error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="c-message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="c-message" name="message" rows="5" required minlength="10"></textarea>
+          <p class="field__error" aria-live="polite"></p>
+        </div>
+        <button class="btn btn--primary btn--block" type="submit">Envoyer</button>
+        <p class="form__success" role="status" hidden>Merci ! Votre message est valide. Ceci est une démonstration : il n'a pas été envoyé.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     PIED DE PAGE  ·  WordPress : footer.php
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="site-footer__stripe" aria-hidden="true"></div>
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <img src="images/logo/logo-badge.svg" alt="Logo du FC Lisala" width="84" height="88" loading="lazy">
+      <p class="site-footer__name">Football Club de Lisala</p>
+      <p class="site-footer__motto">La passion d'une ville, l'ambition d'un club</p>
+    </div>
+    <nav class="site-footer__col" aria-label="Plan du site">
+      <h2 class="site-footer__title">Le site</h2>
+      <ul>
+        <li><a href="#club">Le Club</a></li>
+        <li><a href="#projet">Projet sportif</a></li>
+        <li><a href="#equipe">Équipe</a></li>
+        <li><a href="#actualites">Actualités</a></li>
+      </ul>
+    </nav>
+    <nav class="site-footer__col" aria-label="Rejoindre le club">
+      <h2 class="site-footer__title">Rejoindre</h2>
+      <ul>
+        <li><a href="#partenaires">Partenaires</a></li>
+        <li><a href="#contact" data-subject="Partenariat">Devenir partenaire</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-footer__col">
+      <h2 class="site-footer__title">Contact</h2>
+      <ul>
+        <li>Lisala, Mongala, RD Congo</li>
+        <li data-config="phone">Numéro à compléter</li>
+        <li data-config="email">E-mail à compléter</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>© <span data-year>2026</span> Football Club de Lisala. Tous droits réservés.</p>
+    <p class="site-footer__credits">Photos d'illustration : <a href="https://www.pexels.com" rel="noopener" target="_blank">Pexels</a>, licence libre. Les personnes photographiées ne sont pas des joueurs du club.</p>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="#contact" data-whatsapp hidden aria-label="Contacter le FC Lisala sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+</a>
+
+<button class="to-top" type="button" data-action="to-top" aria-label="Revenir en haut de la page">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+</button>
+
+<!-- Fenêtre modale (articles) -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__backdrop" data-action="close-modal"></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal__close" type="button" data-action="close-modal" aria-label="Fermer">×</button>
+    <div class="modal__content" id="modal-content"></div>
+  </div>
+</div>
+
+<!-- Contenus des articles de démonstration (WordPress : single.php) -->
+<template id="article-1">
+  <p class="eyebrow">Match · Exemple</p>
+  <h2 id="modal-title" class="modal__title">Avant-match : le groupe prêt pour la prochaine rencontre</h2>
+  <p class="is-placeholder">Date, adversaire, compétition, lieu et heure du coup d'envoi à compléter.</p>
+  <p>Ce modèle d'article sert aux annonces de match : état du groupe, mot de l'entraîneur, informations pratiques pour les supporters.</p>
+</template>
+<template id="article-2">
+  <p class="eyebrow">Entraînement · Exemple</p>
+  <h2 id="modal-title" class="modal__title">Semaine d'entraînement : intensité et cohésion</h2>
+  <p class="is-placeholder">Date et contenu des séances à compléter.</p>
+  <p>Ce modèle d'article présente le travail de la semaine : préparation physique, exercices tactiques, état de forme du groupe.</p>
+</template>
+<template id="article-3">
+  <p class="eyebrow">Club · Exemple</p>
+  <h2 id="modal-title" class="modal__title">Supporters : le FC Lisala compte sur vous</h2>
+  <p class="is-placeholder">Date à compléter.</p>
+  <p>Ce modèle d'article s'adresse aux supporters : comment suivre le club sur les réseaux, venir au stade et encourager l'équipe.</p>
+</template>
+<template id="article-4">
+  <p class="eyebrow">Vie sportive · Exemple</p>
+  <h2 id="modal-title" class="modal__title">Jeunes talents : le club ouvre ses portes</h2>
+  <p class="is-placeholder">Catégories d'âge, lieu, date et documents à compléter.</p>
+  <p>Ce modèle d'article annonce une séance de détection organisée par le club pour repérer les jeunes joueurs de la région.</p>
+</template>
+
+<script src="script.js" defer></script>
+</body>
+</html>
