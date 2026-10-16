@@ -138,7 +138,7 @@ figure, blockquote { margin: 0; }
     linear-gradient(135deg, var(--green) 0%, #1F5530 100%);
 }
 .media .photo { width: 100%; height: 100%; object-fit: cover; }
-.media.is-missing .photo { visibility: hidden; }
+.media.is-missing .photo, .media .photo.is-broken { visibility: hidden; }
 
 /* 4. En-tête et navigation ----------------------------------------------- */
 .site-header {
@@ -289,6 +289,17 @@ figure, blockquote { margin: 0; }
 .axis-card p { margin: 0; color: rgba(255, 255, 255, .72); }
 
 .projet-banner { position: relative; margin-top: clamp(40px, 6vw, 72px); aspect-ratio: 5 / 2; border-radius: var(--radius); }
+.media--slides .banner-slide { position: absolute; inset: 0; opacity: 0; animation: banner-slide 18s linear infinite; will-change: opacity, transform; }
+.media--slides .banner-slide:nth-of-type(1) { animation-delay: -1.08s; }
+.media--slides .banner-slide:nth-of-type(2) { animation-delay: 4.92s; }
+.media--slides .banner-slide:nth-of-type(3) { animation-delay: 10.92s; }
+@keyframes banner-slide {
+  0% { opacity: 0; transform: scale(1); }
+  6% { opacity: 1; }
+  33% { opacity: 1; }
+  40% { opacity: 0; transform: scale(1.12); }
+  100% { opacity: 0; transform: scale(1.12); }
+}
 .projet-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(163, 6, 15, .88) 0%, rgba(163, 6, 15, .35) 55%, transparent 100%); }
 .projet-banner__caption {
   position: absolute; z-index: 1; left: clamp(20px, 5vw, 56px); bottom: clamp(20px, 5vw, 48px);
@@ -461,6 +472,8 @@ body.no-scroll { overflow: hidden; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+  .media--slides .banner-slide { animation: none !important; }
+  .media--slides .banner-slide:nth-of-type(1) { opacity: 1; }
 }
 
 /* 14. Responsive --------------------------------------------------------- */

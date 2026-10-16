@@ -32,7 +32,7 @@ Pour mettre les photos du club : remplacer l'attribut `src` (et `srcset` pour la
 | --- | --- |
 | Bannière d'accueil | [30782372](https://www.pexels.com/photo/30782372/) |
 | Le Club | [38242318](https://www.pexels.com/photo/38242318/), [38404136](https://www.pexels.com/photo/38404136/) |
-| Projet sportif | [36826363](https://www.pexels.com/photo/36826363/) |
+| Projet sportif (diaporama) | [36826363](https://www.pexels.com/photo/36826363/), [38404129](https://www.pexels.com/photo/38404129/), [28735311](https://www.pexels.com/photo/28735311/) |
 | Actualités | [32941171](https://www.pexels.com/photo/32941171/), [28735311](https://www.pexels.com/photo/28735311/), [27294512](https://www.pexels.com/photo/27294512/), [38404129](https://www.pexels.com/photo/38404129/) |
 | Partenaires | [34927818](https://www.pexels.com/photo/34927818/) |
 

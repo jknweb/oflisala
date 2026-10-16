@@ -60,7 +60,12 @@ const TEAM = [
   /* --- Images : fond de secours si une photo externe ne charge pas --- */
   function initImageFallback() {
     $$(".media .photo").forEach((img) => {
-      const fail = () => img.closest(".media").classList.add("is-missing");
+      const fail = () => {
+        img.classList.add("is-broken");
+        const media = img.closest(".media");
+        // Diaporama : le fond de secours n'apparaît que si toutes les photos manquent
+        if ($$(".photo", media).every((p) => p.classList.contains("is-broken"))) media.classList.add("is-missing");
+      };
       if (img.complete && img.naturalWidth === 0 && img.src) fail();
       img.addEventListener("error", fail, { once: true });
     });
