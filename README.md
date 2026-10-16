@@ -1,6 +1,6 @@
-# FC Lisala · Site officiel
+# OC Lisala · Site officiel
 
-Site vitrine du Football Club de Lisala (Lisala, Mongala, RD Congo).
+Site vitrine de l'Olympique Club de Lisala (Lisala, Mongala, RD Congo).
 HTML5, CSS3 et JavaScript natif, sans framework ni outil de build : ouvrir `index.html` dans un navigateur suffit.
 
 ## Fichiers

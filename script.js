@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FC Lisala · Script principal (JavaScript natif)
+   OC Lisala · Script principal (JavaScript natif)
    --------------------------------------------------------------------------
    1. SITE_CONFIG : coordonnées, WhatsApp, réseaux sociaux   ← À COMPLÉTER
    2. TEAM : joueurs, entraîneur et staff                     ← À COMPLÉTER
@@ -14,7 +14,7 @@ const SITE_CONFIG = {
   phone: "",        // ex. "+243 8X XXX XX XX"
   email: "",        // ex. "contact@…"
   whatsapp: "",     // numéro international, chiffres uniquement, ex. "2438XXXXXXXX"
-  whatsappMessage: "Bonjour, je vous contacte depuis le site du FC Lisala.",
+  whatsappMessage: "Bonjour, je vous contacte depuis le site de l'OC Lisala.",
   socials: {
     facebook: "",   // ex. "https://facebook.com/…"
     instagram: "",
