@@ -31,10 +31,10 @@ Pour mettre les photos du club : remplacer l'attribut `src` (et `srcset` pour la
 | Emplacement | Photo Pexels |
 | --- | --- |
 | Bannière d'accueil (diaporama) | `images/hero/joueurs-1.jpg`, `images/hero/joueurs-2.jpg` (images fournies par le club) |
-| Le Club | [38242318](https://www.pexels.com/photo/38242318/), [38404136](https://www.pexels.com/photo/38404136/) |
-| Projet sportif (diaporama) | [36826363](https://www.pexels.com/photo/36826363/), [38404129](https://www.pexels.com/photo/38404129/), [28735311](https://www.pexels.com/photo/28735311/) |
-| Actualités | [32941171](https://www.pexels.com/photo/32941171/), [28735311](https://www.pexels.com/photo/28735311/), [27294512](https://www.pexels.com/photo/27294512/), [38404129](https://www.pexels.com/photo/38404129/) |
-| Partenaires | [34927818](https://www.pexels.com/photo/34927818/) |
+| Le Club | `images/hero/joueurs-2.jpg` (club), [38404136](https://www.pexels.com/photo/38404136/) |
+| Projet sportif (diaporama) | `joueurs-1.jpg`, `joueurs-2.jpg` (club), [36826363](https://www.pexels.com/photo/36826363/) |
+| Actualités | `joueurs-1.jpg`, `joueurs-2.jpg` (club), [27294512](https://www.pexels.com/photo/27294512/), [38404129](https://www.pexels.com/photo/38404129/) |
+| Partenaires | `joueurs-1.jpg` (club) |
 
 ## Couleurs
 
