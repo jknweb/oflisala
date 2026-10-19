@@ -68,6 +68,15 @@ Un bouton sans texte n'est pas affiché.
 
 Le formulaire n'est affiché qu'une fois le numéro WhatsApp renseigné. Un lien `?sujet=Partenariat#contact` présélectionne le sujet.
 
+### Une section ne s'affiche pas
+
+Connecté en administrateur, ouvrez la page d'accueil : un encadré orange (visible seulement par vous) indique la cause.
+
+- **Membres en brouillon ou inactifs** : seuls les membres « Publié » et cochés « Actif » apparaissent. Dans **Gestion du site > Équipe**, ouvrez le membre et cliquez sur **Publier** (ou **Mettre à jour**).
+- **Section décochée** : **Gestion du site > Textes des sections**, case « Afficher la section ».
+- **Extension désactivée** : **Extensions > Extensions installées**, activer « OC Lisala – Contenus du club ».
+- **Ancienne page en cache** : si le site utilise une extension de cache (LiteSpeed Cache, WP Rocket, cache de l'hébergeur…), videz le cache après chaque modification.
+
 ## 3. Images conseillées
 
 | Emplacement | Format |

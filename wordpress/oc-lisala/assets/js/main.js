@@ -93,7 +93,11 @@
   /* --- 3. Apparition progressive au défilement --- */
   function initReveal() {
     const items = $$(".reveal");
+    if (!items.length) return;
     if (reduceMotion || !("IntersectionObserver" in window)) { items.forEach((el) => el.classList.add("is-visible")); return; }
+    // Ce qui est déjà à l'écran reste affiché ; le reste apparaîtra au défilement.
+    items.forEach((el) => { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-visible"); });
+    document.documentElement.classList.add("has-reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }

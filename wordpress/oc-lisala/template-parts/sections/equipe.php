@@ -7,12 +7,39 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$o = ocl_options( 'sections' );
+$o       = ocl_options( 'sections' );
+$can_fix = current_user_can( 'edit_posts' );
 if ( ! $o['team_enabled'] ) {
+	// Section masquée : seules les personnes qui gèrent le site voient pourquoi.
+	if ( current_user_can( 'edit_theme_options' ) ) {
+		echo '<section class="section section--team" id="equipe"><div class="container"><p class="editor-note">';
+		printf(
+			/* translators: %s: lien vers la page des réglages. */
+			esc_html__( 'La section Équipe est masquée. Pour l\'afficher, cochez la case Afficher la section « Équipe » dans %s. (Message visible uniquement par les administrateurs connectés.)', 'oc-lisala' ),
+			'<a href="' . esc_url( admin_url( 'admin.php?page=ocl-sections#equipe' ) ) . '">' . esc_html__( 'Gestion du site > Textes des sections', 'oc-lisala' ) . '</a>'
+		);
+		echo '</p></div></section>';
+	}
 	return;
 }
 
 $members = ocl_core_active() ? ocl_core_get_items( 'ocl_membre' ) : array();
+
+// Membres enregistrés mais pas affichés (brouillon, en attente, programmés, ou décochés « Actif »).
+$hidden_count = 0;
+if ( $can_fix && ocl_core_active() ) {
+	$hidden_count = count(
+		get_posts(
+			array(
+				'post_type'      => 'ocl_membre',
+				'post_status'    => array( 'publish', 'draft', 'pending', 'future', 'private' ),
+				'posts_per_page' => -1,
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+			)
+		)
+	) - count( $members );
+}
 $filters = array(
 	'staff'     => __( 'Staff', 'oc-lisala' ),
 	'gardien'   => __( 'Gardiens', 'oc-lisala' ),
@@ -39,6 +66,23 @@ $filters = array_intersect_key( $filters, $present );
 			)
 		);
 		?>
+
+		<?php if ( $can_fix && ! ocl_core_active() ) : ?>
+			<p class="editor-note">
+				<?php esc_html_e( "Les membres de l'équipe ne peuvent pas s'afficher : l'extension « OC Lisala – Contenus du club » n'est pas activée (Extensions > Extensions installées). Message visible uniquement par les personnes connectées.", 'oc-lisala' ); ?>
+			</p>
+		<?php elseif ( $hidden_count > 0 ) : ?>
+			<p class="editor-note">
+				<?php
+				printf(
+					/* translators: 1: nombre de membres, 2: lien vers la liste. */
+					esc_html( _n( '%1$d membre enregistré n\'est pas affiché : il est en brouillon ou décoché « Actif ». Ouvrez %2$s, cliquez sur le membre puis sur « Publier » (ou « Mettre à jour » avec la case « Actif » cochée). Message visible uniquement par les personnes connectées.', '%1$d membres enregistrés ne sont pas affichés : ils sont en brouillon ou décochés « Actif ». Ouvrez %2$s, cliquez sur chaque membre puis sur « Publier » (ou « Mettre à jour » avec la case « Actif » cochée). Message visible uniquement par les personnes connectées.', $hidden_count, 'oc-lisala' ) ),
+					(int) $hidden_count,
+					'<a href="' . esc_url( admin_url( 'edit.php?post_type=ocl_membre' ) ) . '">' . esc_html__( 'Gestion du site > Équipe', 'oc-lisala' ) . '</a>'
+				);
+				?>
+			</p>
+		<?php endif; ?>
 
 		<?php if ( ! $members ) : ?>
 			<?php if ( $o['team_empty'] ) : ?>

@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'OCL_THEME_VERSION', '1.0.0' );
+define( 'OCL_THEME_VERSION', '1.0.1' );
 
 $ocl_inc = get_template_directory() . '/inc/';
 
